@@ -1,8 +1,10 @@
-# c-showcase
-
-[English](README.md) | [中文](README.zh-CN.md)
+# C Showcase
 
 C 语言代码示例合集，用于学习和快速参考。每个示例演示 C 语言编程中不同的概念或技术。
+
+![C](https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=white)
+
+[English](README.md) · **中文**
 
 ## 示例列表
 
@@ -19,9 +21,9 @@ gcc circular-queue.c -o circular-queue
 
 基于 UDP 的自定义协议实现，包含数据包帧封装、校验和验证以及命令处理回调模型。附带 client 和 server 用于测试。
 
-- `src/lcou.h` / `src/lcou.c` — 协议库（初始化、发送、接收、校验和）
-- `tests/server.c` — 监听 LCOU 数据包并分发命令的服务端
-- `tests/client.c` — 发送 LCOU 数据包并打印响应的客户端
+- `src/lcou.h` / `src/lcou.c` —— 协议库（初始化、发送、接收、校验和）
+- `tests/server.c` —— 监听 LCOU 数据包并分发命令的服务端
+- `tests/client.c` —— 发送 LCOU 数据包并打印响应的客户端
 
 ```bash
 # 编译 server 和 client（Linux/macOS）
@@ -82,3 +84,7 @@ gcc shared-memory/read.c -o read
 - GCC 或任何兼容 C99 的编译器
 - Linux 或 macOS（部分示例使用了 POSIX API，如 `sys/ipc.h`、`sys/mman.h`）
 - [UTHash](https://troydhanson.github.io/uthash/)（用于 LeetCode 哈希表题解）
+
+## 许可证
+
+本项目暂未包含许可证文件。

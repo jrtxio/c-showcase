@@ -1,9 +1,10 @@
-# c-showcase
-
-![Language](https://img.shields.io/badge/language-C-blue)  [![English](https://img.shields.io/badge/lang-English-blue)](README.md) [![中文](https://img.shields.io/badge/lang-中文-red)](README.zh-CN.md)
-
+# C Showcase
 
 A collection of C code examples for learning and quick reference. Each example demonstrates a different concept or technique in C programming.
+
+![C](https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=white)
+
+**English** · [中文](README.zh-CN.md)
 
 ## Examples
 
@@ -83,3 +84,7 @@ gcc shared-memory/read.c -o read
 - GCC or any C99-compatible compiler
 - Linux or macOS (some examples use POSIX APIs such as `sys/ipc.h`, `sys/mman.h`)
 - [UTHash](https://troydhanson.github.io/uthash/) (used in LeetCode hash table solution)
+
+## License
+
+This project does not currently include a license file.
