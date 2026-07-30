@@ -2,15 +2,48 @@
 
 C 语言代码示例合集，用于学习和快速参考。每个示例演示 C 语言编程中不同的概念或技术。
 
-![C](https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=white)
+![C](https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=white) [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 [English](README.md) · **中文**
 
-## 示例列表
+## 功能特性
 
-### 循环队列（Circular Queue）
+- **数据结构** —— 循环（环形）缓冲区队列，含入队 / 出队和边界检查
+- **自定义协议** —— 基于 UDP 的 LCOU 协议，包含数据包帧封装、校验和验证以及回调模型
+- **算法练习** —— LeetCode 题解，展示不同算法技巧（哈希表、双指针）
+- **语言解释器** —— MiniLisp，用约 1,000 行 C 实现的 Lisp 解释器，支持闭包、宏和垃圾回收
+- **IPC** —— POSIX 共享内存程序，用于进程间通信
 
-使用固定大小数组实现循环（环形）缓冲区。演示了队列初始化、入队、出队以及边界检查（空/满）。
+## 环境要求
+
+| 依赖 | 用途 / 版本 |
+|------|------------|
+| 编译器 | GCC 或任何兼容 C99 的编译器 |
+| 平台 | Linux 或 macOS（部分示例使用了 POSIX API，如 `sys/ipc.h`、`sys/mman.h`） |
+| [UTHash](https://troydhanson.github.io/uthash/) | 用于 LeetCode 哈希表题解 |
+
+## 分类
+
+| 示例 | 说明 | 主题 |
+|------|------|------|
+| 循环队列 | 循环（环形）缓冲区队列，含入队 / 出队和空 / 满检查 | 数据结构 |
+| LCOU 协议 | 基于 UDP 的自定义协议，包含数据包帧封装、校验和验证以及命令处理回调模型 | 网络、协议 |
+| LeetCode 题解 | 精选 LeetCode 题目的 C 语言解答（见下文） | 算法 |
+| MiniLisp | 用约 1,000 行 C 实现的 Lisp 解释器；支持闭包、宏和复制式 GC（Cheney 算法）。基于 [rui314/minilisp](https://github.com/rui314/minilisp) | 解释器 |
+| 共享内存 | POSIX 共享内存 IPC 程序对：写入端创建段，读取端挂载并读取 | IPC |
+
+## 使用方法
+
+### 1. 克隆
+
+```bash
+git clone https://github.com/turinglambdaai/c-showcase.git
+cd c-showcase
+```
+
+### 2. 构建并运行示例
+
+### 循环队列
 
 ```bash
 gcc circular-queue.c -o circular-queue
@@ -65,7 +98,7 @@ make test     # 运行测试套件
 
 完整的语言文档见 [`minilisp/README.md`](minilisp/README.md)。
 
-### 共享内存（Shared Memory）
+### 共享内存
 
 一对演示 POSIX 共享内存 IPC 的程序。写入端创建共享内存段并写入数据；读取端挂载、读取并清理。
 
@@ -79,12 +112,17 @@ gcc shared-memory/read.c -o read
 ./read
 ```
 
-## 环境要求
+## 项目结构
 
-- GCC 或任何兼容 C99 的编译器
-- Linux 或 macOS（部分示例使用了 POSIX API，如 `sys/ipc.h`、`sys/mman.h`）
-- [UTHash](https://troydhanson.github.io/uthash/)（用于 LeetCode 哈希表题解）
+```
+c-showcase/
+├── circular-queue/   # 循环（环形）缓冲区队列
+├── lcou/             # LCOU UDP 协议库及测试
+├── leetcode/         # LeetCode C 题解
+├── minilisp/         # 用约 1,000 行 C 实现的 Lisp 解释器
+└── shared-memory/    # POSIX 共享内存 IPC 程序
+```
 
 ## 许可证
 
-本项目暂未包含许可证文件。
+基于 [MIT License](LICENSE) 开源。

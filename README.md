@@ -2,15 +2,48 @@
 
 A collection of C code examples for learning and quick reference. Each example demonstrates a different concept or technique in C programming.
 
-![C](https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=white)
+![C](https://img.shields.io/badge/C-A8B9CC?logo=c&logoColor=white) [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
 **English** · [中文](README.zh-CN.md)
 
-## Examples
+## Features
+
+- **Data structures** — circular (ring) buffer queue with enqueue / dequeue and boundary checks
+- **Custom protocol** — UDP-based LCOU protocol with packet framing, checksum verification, and a callback model
+- **Algorithm practice** — LeetCode solutions showcasing different techniques (hash table, two-pointer)
+- **Language interpreter** — MiniLisp, a Lisp interpreter in ~1,000 lines of C with closures, macros, and a garbage collector
+- **IPC** — POSIX shared memory programs for inter-process communication
+
+## Requirements
+
+| Dependency | Purpose / Version |
+|------------|-------------------|
+| Compiler | GCC or any C99-compatible compiler |
+| Platform | Linux or macOS (some examples use POSIX APIs such as `sys/ipc.h`, `sys/mman.h`) |
+| [UTHash](https://troydhanson.github.io/uthash/) | Used in the LeetCode hash table solution |
+
+## Categories
+
+| Example | Description | Topic |
+|---------|-------------|-------|
+| Circular Queue | Circular (ring) buffer queue with enqueue / dequeue and empty/full checks | Data structures |
+| LCOU Protocol | UDP-based custom protocol with packet framing, checksum verification, and a command-handler callback model | Networking, protocols |
+| LeetCode Solutions | C solutions to selected LeetCode problems (see below) | Algorithms |
+| MiniLisp | Lisp interpreter in ~1,000 lines of C; supports closures, macros, and a copying GC (Cheney's algorithm). Based on [rui314/minilisp](https://github.com/rui314/minilisp) | Interpreters |
+| Shared Memory | POSIX shared memory IPC pair: writer creates a segment, reader attaches and reads | IPC |
+
+## Usage
+
+### 1. Clone
+
+```bash
+git clone https://github.com/turinglambdaai/c-showcase.git
+cd c-showcase
+```
+
+### 2. Build and run an example
 
 ### Circular Queue
-
-A straightforward implementation of a circular (ring) buffer using a fixed-size array. Demonstrates queue initialization, enqueue, dequeue, and boundary checks (empty/full).
 
 ```bash
 gcc circular-queue.c -o circular-queue
@@ -79,12 +112,17 @@ gcc shared-memory/read.c -o read
 ./read
 ```
 
-## Requirements
+## Project Structure
 
-- GCC or any C99-compatible compiler
-- Linux or macOS (some examples use POSIX APIs such as `sys/ipc.h`, `sys/mman.h`)
-- [UTHash](https://troydhanson.github.io/uthash/) (used in LeetCode hash table solution)
+```
+c-showcase/
+├── circular-queue/   # Circular (ring) buffer queue
+├── lcou/             # LCOU UDP protocol library and tests
+├── leetcode/         # LeetCode C solutions
+├── minilisp/         # Lisp interpreter in ~1,000 lines of C
+└── shared-memory/    # POSIX shared memory IPC programs
+```
 
 ## License
 
-This project does not currently include a license file.
+Licensed under the [MIT License](LICENSE).
